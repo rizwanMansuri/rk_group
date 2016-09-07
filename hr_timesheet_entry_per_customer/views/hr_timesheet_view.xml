@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_hr_timesheet_sheet_inherit_for_customer" model="ir.ui.view">
+        <field name="name">view.hr.timesheet.sheet.inherit.for.customer</field>
+        <field name="model">hr_timesheet_sheet.sheet</field>
+        <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="before">
+                <group colspan="4" col="4">
+                    <field name="partner_id" required="1" class="oe_avatar" context="{'has_analytic_account': True}"/>
+                    <button name="search_analyic_account" string="Search Anayltic Account"></button>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
